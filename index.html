@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone Special ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;background:#08000d;color:#fff;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 20% 10%,#ff2d7d33,transparent 30%),radial-gradient(circle at 80% 70%,#9b2cff22,transparent 35%);pointer-events:none;z-index:-2}
+canvas{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,#ff4f91,#c65cff);z-index:999}
+nav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:7px;padding:8px;border:1px solid #fff2;border-radius:40px;background:#13091dcc;backdrop-filter:blur(15px);z-index:100;box-shadow:0 10px 30px #0008}
+nav a{color:#fff;text-decoration:none;padding:9px 13px;border-radius:25px;font-size:12px;transition:.3s}
+nav a:hover{background:#ff4f91}
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 18px;position:relative}
+.wrap{width:min(1000px,100%);text-align:center}
+.glass{background:#ffffff0d;border:1px solid #ffffff1c;border-radius:30px;padding:35px;backdrop-filter:blur(16px);box-shadow:0 25px 80px #0007}
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:12px;color:#ff9bc2}
+h1{font-family:"Great Vibes",cursive;font-size:clamp(70px,15vw,150px);font-weight:400;color:#fff;text-shadow:0 0 35px #ff3f8f}
+h2{font-size:clamp(30px,6vw,55px);margin:12px 0 20px}
+.script{font-family:"Great Vibes",cursive;font-size:clamp(35px,7vw,65px);font-weight:400;color:#ff9fc5}
+p{line-height:1.9;color:#f7eaf1;font-size:16px}
+.btn{display:inline-block;border:0;color:#fff;background:linear-gradient(135deg,#ff397f,#a83dff);padding:14px 24px;border-radius:50px;margin:12px 5px;cursor:pointer;font-weight:600;box-shadow:0 12px 30px #ff397f44;transition:.35s}
+.btn:hover{transform:translateY(-5px) scale(1.03);box-shadow:0 18px 35px #ff397f66}
+.hero{background:radial-gradient(circle,#5b123c55,transparent 50%)}
+.scroll{margin-top:40px;opacity:.7;animation:bounce 2s infinite}
+.reveal{opacity:0;transform:translateY(70px);transition:1s cubic-bezier(.2,.8,.2,1)}
+.reveal.show{opacity:1;transform:none}
+.letter{max-width:750px;margin:auto;text-align:left}
+.letter p{font-size:17px;margin:12px 0}
+.line{height:1px;background:#fff2;margin:25px 0}
+.counter{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:25px 0}
+.stat{padding:22px;border-radius:20px;background:#ffffff0b;border:1px solid #fff1}
+.stat b{font-size:30px;display:block;color:#ff9ec5}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px}
+.photo{height:230px;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:55px;background:linear-gradient(135deg,#ff4f91,#702cff);overflow:hidden;position:relative;transition:.5s}
+.photo:nth-child(2){background:linear-gradient(135deg,#6f42ff,#ff5ca8)}
+.photo:nth-child(3){background:linear-gradient(135deg,#ff7b4f,#b02cff)}
+.photo:nth-child(4){background:linear-gradient(135deg,#ff4fa3,#4030ff)}
+.photo:nth-child(5){background:linear-gradient(135deg,#c13cff,#ff477c)}
+.photo:nth-child(6){background:linear-gradient(135deg,#ff4f69,#6e3dff)}
+.photo:hover{transform:translateY(-8px) rotate(1deg);box-shadow:0 20px 45px #0008}
+.photo span{position:absolute;bottom:12px;left:12px;font-size:12px;background:#0007;padding:6px 10px;border-radius:20px}
+.timeline{display:grid;gap:18px;margin-top:25px;text-align:left}
+.memory{padding:24px;border-left:3px solid #ff5799;background:#ffffff08;border-radius:0 20px 20px 0;transform:translateX(-20px);transition:.5s}
+.memory:hover{transform:translateX(5px);background:#ffffff12}
+.memory h3{color:#ff9fc5;margin-bottom:7px}
+.reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:25px}
+.reason{padding:24px;border-radius:22px;background:#ffffff09;border:1px solid #fff1;transition:.4s}
+.reason:hover{transform:translateY(-7px);background:#ff4f9115}
+.reason strong{display:block;font-size:35px;margin-bottom:8px}
+.secret{display:none;margin-top:20px;padding:25px;border-radius:22px;background:#ff4f9118;border:1px solid #ff8bbd55}
+.secret.open{display:block;animation:pop .7s}
+.final{background:radial-gradient(circle at center,#8b174d55,transparent 55%)}
+.big-heart{font-size:100px;animation:pulse 1.6s infinite}
+#musicStatus{font-size:13px;color:#ffb4d1;margin-top:8px}
+@keyframes bounce{50%{transform:translateY(10px)}}
+@keyframes pulse{50%{transform:scale(1.15);filter:drop-shadow(0 0 25px #ff4f91)}}
+@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@media(max-width:650px){.gallery{grid-template-columns:repeat(2,1fr)}.photo{height:170px}.reasons{grid-template-columns:1fr}.counter{grid-template-columns:1fr}.glass{padding:25px 18px}nav a{padding:8px 9px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<canvas id="stars"></canvas>
+
+<section class="hero" id="home">
+<div class="wrap">
+<div class="kicker">A little surprise made just for you</div>
+<h1>Happy Birthday</h1>
+<div class="script">My Favourite Person ❤️</div>
+<p style="max-width:650px;margin:20px auto">Some people make life beautiful just by being a part of it. Today is all about celebrating you. ✨</p>
+<a class="btn" href="#letter">Open Your Letter 💌</a>
+<div class="scroll">↓ keep scrolling ↓</div>
+</div>
+</section>
+
+<section id="letter">
+<div class="wrap reveal">
+<div class="glass letter">
+<div class="kicker">A letter from my heart</div>
+<h2>For You 💗</h2>
+<p>Today is a little more special because it’s the day <b>you</b> came into this world.</p>
+<p>I just want you to know how much you mean to me. Your smile, your little talks, your cute moments, and even our silly fights have become some of my favourite memories. 🥹💕</p>
+<p>You have a way of making ordinary moments feel special, and I’m genuinely grateful that you’re a part of my life.</p>
+<p>On your birthday, I wish you endless happiness, beautiful memories, success in everything you dream of, and a smile that never fades.</p>
+<div class="line"></div>
+<p>I hope this little surprise makes you smile, because seeing you happy is honestly one of my favourite things. ❤️</p>
+<p><b>You deserve all the happiness, love and beautiful moments in the world.</b> 🫶🏻</p>
+<div class="line"></div>
+<p class="script" style="text-align:center">Happy Birthday, my favourite person. 🎂❤️</p>
+</div>
+</div>
+</section>
+
+<section id="memories">
+<div class="wrap reveal">
+<div class="kicker">Moments worth keeping</div>
+<h2>Our Little Memory Wall 📸</h2>
+<p>Replace these colorful cards with your own photos whenever you want.</p>
+<div class="gallery">
+<div class="photo">❤️<span>Favourite moment</span></div>
+<div class="photo">🥰<span>A beautiful memory</span></div>
+<div class="photo">✨<span>That special smile</span></div>
+<div class="photo">💞<span>Together</span></div>
+<div class="photo">🌙<span>Late-night talks</span></div>
+<div class="photo">🫶🏻<span>Always special</span></div>
+</div>
+</div>
+</section>
+
+<section id="reasons">
+<div class="wrap reveal">
+<div class="kicker">Just a few things</div>
+<h2>Why You're So Special 💕</h2>
+<div class="reasons">
+<div class="reason"><strong>😊</strong><h3>Your Smile</h3><p>It can turn an ordinary moment into a beautiful one.</p></div>
+<div class="reason"><strong>🫶🏻</strong><h3>Your Heart</h3><p>The kindness and warmth you bring into little moments.</p></div>
+<div class="reason"><strong>✨</strong><h3>Your Vibe</h3><p>There is something about you that makes memories feel brighter.</p></div>
+<div class="reason"><strong>💗</strong><h3>Just You</h3><p>You don't need to be anything else. You are already special.</p></div>
+</div>
+</div>
+</section>
+
+<section id="story">
+<div class="wrap reveal">
+<div class="kicker">A tiny timeline</div>
+<h2>Our Story ✨</h2>
+<div class="glass timeline">
+<div class="memory"><h3>🌸 The Beginning</h3><p>Somewhere along the way, a normal day became the beginning of something I never wanted to forget.</p></div>
+<div class="memory"><h3>💬 The Little Talks</h3><p>Then came the conversations, jokes, random moments and all those tiny things that slowly became favourite memories.</p></div>
+<div class="memory"><h3>😂 The Silly Moments</h3><p>The funniest moments are often the simplest ones—and somehow they become the ones we remember most.</p></div>
+<div class="memory"><h3>❤️ Today</h3><p>And today, I get to wish you a very Happy Birthday and remind you how special you are.</p></div>
+</div>
+</div>
+</section>
+
+<section id="surprise">
+<div class="wrap reveal">
+<div class="glass">
+<div class="kicker">One last thing...</div>
+<h2>Do You Want A Secret? 👀</h2>
+<p>There is a tiny message hidden behind this button.</p>
+<button class="btn" onclick="secret()">Open The Secret 💝</button>
+<div id="secret" class="secret">
+<p class="script">You are one of my favourite reasons to smile. ❤️</p>
+<p>And I hope this little website becomes one of those silly, sweet memories that makes you smile whenever you see it. 🥹✨</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="final" id="final">
+<div class="wrap reveal">
+<div class="big-heart">❤️</div>
+<div class="script">Keep smiling...</div>
+<h2>Because you deserve it. ✨</h2>
+<p>May this new year of your life bring you happiness, success, peace, laughter and countless beautiful memories.</p>
+<p style="margin-top:20px"><b>Happy Birthday once again! 🎂💗</b></p>
+<button class="btn" onclick="hearts()">Make It Rain Hearts ❤️</button>
+<button class="btn" onclick="music()">🎵 Music</button>
+<p id="musicStatus">Add your own music file as <b>music.mp3</b> to use the music button.</p>
+</div>
+</section>
+
+<nav>
+<a href="#home">Home</a><a href="#letter">Letter</a><a href="#memories">Photos</a><a href="#reasons">Why</a><a href="#story">Story</a><a href="#final">❤️</a>
+</nav>
+
+<audio id="audio" loop><source src="music.mp3" type="audio/mpeg"></audio>
+
+<script>
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+window.addEventListener('scroll',()=>{let h=document.documentElement;document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'});
+
+function secret(){document.getElementById('secret').classList.toggle('open');hearts()}
+function music(){let a=document.getElementById('audio'),s=document.getElementById('musicStatus');if(a.paused){a.play().then(()=>s.textContent='🎶 Music is playing ❤️').catch(()=>s.textContent='Add music.mp3 to the folder first.')}else{a.pause();s.textContent='Music paused 💗'}}
+function hearts(){for(let i=0;i<35;i++){let x=document.createElement('div');x.textContent=['❤️','💗','💕','✨','💖'][Math.floor(Math.random()*5)];x.style.position='fixed';x.style.left=Math.random()*100+'vw';x.style.top=(80+Math.random()*20)+'vh';x.style.fontSize=(18+Math.random()*30)+'px';x.style.zIndex=999;x.style.transition='transform 3s ease,opacity 3s';document.body.appendChild(x);requestAnimationFrame(()=>{x.style.transform='translateY(-110vh) rotate(360deg)';x.style.opacity='0'});setTimeout(()=>x.remove(),3200)}}
+const c=document.getElementById('stars'),ctx=c.getContext('2d');let pts=[];
+function resize(){c.width=innerWidth;c.height=innerHeight;pts=Array.from({length:70},()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.7,v:Math.random()*.3+.1}))}
+function draw(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='rgba(255,255,255,.55)';pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();p.y+=p.v;if(p.y>c.height)p.y=0});requestAnimationFrame(draw)}
+resize();draw();addEventListener('resize',resize);
+</script>
+</body>
+</html>
